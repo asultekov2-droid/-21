@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Заказ — Флора, цветочный магазин</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Manrope:wght@400;600&display=swap" rel="stylesheet">
+<link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+<header class="sticky-top">
+<nav class="navbar navbar-expand-lg site-nav">
+<div class="container">
+<a class="navbar-brand" href="index.html">Флора</a>
+<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu" aria-controls="menu" aria-expanded="false" aria-label="Открыть меню"><span class="navbar-toggler-icon"></span></button>
+<div class="collapse navbar-collapse" id="menu">
+<ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2"><li class="nav-item"><a class="nav-link" href="index.html">Главная</a></li><li class="nav-item"><a class="nav-link" href="catalog.html">Каталог букетов</a></li><li class="nav-item"><a class="nav-link" href="delivery.html">Доставка и оплата</a></li><li class="nav-item"><a class="nav-link" href="about.html">О нас</a></li>
+<li class="nav-item ms-lg-3"><a class="btn btn-flora" href="order.html">Заказать</a></li></ul>
+</div></div></nav>
+</header>
+<main>
+<section class="page-head"><div class="container"><h1>Оформление заказа</h1><p class="lead mb-0">Заполните форму, и менеджер подтвердит заказ звонком в течение 10 минут.</p></div></section>
+<section class="py-5"><div class="container"><div class="row g-5"><div class="col-lg-8">
+<form id="orderForm" class="needs-validation" novalidate>
+<div class="row g-3">
+<div class="col-md-6"><label for="bq" class="form-label">Букет</label><select id="bq" class="form-select" required><option value="" selected disabled>Выберите букет</option><option value="Нежность" data-price="3200">Нежность — 3200 сом</option><option value="Алый рассвет" data-price="4500">Алый рассвет — 4500 сом</option><option value="Лавандовый сон" data-price="2400">Лавандовый сон — 2400 сом</option><option value="Солнечный день" data-price="2800">Солнечный день — 2800 сом</option><option value="Белое облако" data-price="3900">Белое облако — 3900 сом</option><option value="Тюльпановое утро" data-price="2600">Тюльпановое утро — 2600 сом</option><option value="Мини-радость" data-price="1500">Мини-радость — 1500 сом</option><option value="Королевский" data-price="7800">Королевский — 7800 сом</option></select><div class="invalid-feedback">Выберите букет.</div></div>
+<div class="col-md-6"><label for="qty" class="form-label">Количество</label><input type="number" id="qty" class="form-control" min="1" max="10" value="1" required><div class="invalid-feedback">От 1 до 10.</div></div>
+<div class="col-md-6"><label for="name" class="form-label">Ваше имя</label><input type="text" id="name" class="form-control" required minlength="2"><div class="invalid-feedback">Введите имя.</div></div>
+<div class="col-md-6"><label for="phone" class="form-label">Телефон</label><input type="tel" id="phone" class="form-control" placeholder="+996 555 123 456" required pattern="\+?[0-9 ()\-]{9,}"><div class="invalid-feedback">Введите номер телефона.</div></div>
+<div class="col-12"><label for="addr" class="form-label">Адрес доставки</label><input type="text" id="addr" class="form-control" required><div class="invalid-feedback">Укажите адрес.</div></div>
+<div class="col-md-6"><label for="date" class="form-label">Дата доставки</label><input type="date" id="date" class="form-control" required><div class="invalid-feedback">Выберите дату.</div></div>
+<div class="col-md-6"><label for="time" class="form-label">Время</label><select id="time" class="form-select" required><option value="">Выберите время</option><option>10:00–12:00</option><option>12:00–15:00</option><option>15:00–18:00</option><option>18:00–21:00</option></select><div class="invalid-feedback">Выберите время.</div></div>
+<div class="col-12"><label for="note" class="form-label">Текст открытки (необязательно)</label><textarea id="note" class="form-control" rows="3"></textarea></div>
+<div class="col-12"><div class="form-check"><input class="form-check-input" type="checkbox" id="anon"><label class="form-check-label" for="anon">Доставить анонимно</label></div></div>
+<div class="col-12"><button class="btn btn-flora btn-lg" type="submit">Отправить заказ</button></div></div></form></div>
+<aside class="col-lg-4"><div class="card summary"><div class="card-body"><h2 class="h5">Ваш заказ</h2><p class="mb-1" id="sBq">Букет не выбран</p><p class="small text-muted">Доставка рассчитывается менеджером по адресу.</p><p class="price mb-0" id="sSum">0 сом</p></div></div></aside></div></div></section>
+<div class="modal fade" id="doneModal" tabindex="-1" aria-labelledby="dTitle" aria-hidden="true"><div class="modal-dialog modal-dialog-centered"><div class="modal-content text-center p-3">
+<div class="modal-body"><div class="display-3" aria-hidden="true">💐</div><h2 class="h4" id="dTitle">Заказ принят</h2><p id="dText"></p><a href="index.html" class="btn btn-flora">На главную</a></div></div></div></div>
+</main>
+<footer class="site-footer">
+<div class="container py-5"><div class="row g-4">
+<div class="col-md-4"><p class="footer-brand">Флора</p><p>Свежие цветы с доставкой по Бишкеку. Собираем букеты в день заказа.</p></div>
+<div class="col-6 col-md-4"><p class="fw-semibold">Разделы</p><ul class="list-unstyled"><li><a href="index.html">Главная</a></li><li><a href="catalog.html">Каталог букетов</a></li><li><a href="delivery.html">Доставка и оплата</a></li><li><a href="about.html">О нас</a></li><li><a href="order.html">Заказ</a></li></ul></div>
+<div class="col-6 col-md-4"><p class="fw-semibold">Контакты</p><address class="mb-0">г. Бишкек, ул. Исанова, 42<br><a href="tel:+996555123456">+996 555 123 456</a><br>Ежедневно 8:00–21:00</address></div>
+</div><p class="small mb-0 pt-4 border-top border-light-subtle">© 2026 Флора. Учебный проект.</p></div>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
